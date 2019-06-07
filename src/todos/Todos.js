@@ -3,7 +3,6 @@ import { useStore } from '../Store'
 
 export default function Todos () {
   const todos = useStore(state => state.todos)
-  console.log(todos)
   return (
     <div className='alert alert-success mt-3'>
       <ul>
