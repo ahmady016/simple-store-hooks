@@ -14,7 +14,7 @@ function useDispatch () {
 
 function Store ({ config, children }) {
   let initialState = {}
-  let rootReducer = state => state
+  let rootReducer = s => s
 
   const keys = Object.keys(config)
   if (keys.length === 0) {
@@ -28,9 +28,10 @@ function Store ({ config, children }) {
       return acc
     }, {})
     rootReducer = (state, action) => {
-      for (let i = 0; i < keys.length; i++) {
-        config[keys[i]].reducer(state[keys[i]], action)
-      }
+      return keys.reduce((acc, key) => {
+        acc[key] = config[key].reducer(state[key], action)
+        return acc
+      }, {})
     }
   }
   const [state, dispatch] = React.useReducer(rootReducer, initialState)
