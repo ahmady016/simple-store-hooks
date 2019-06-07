@@ -4,7 +4,7 @@ import { useStore } from './Store'
 export default function Counter () {
   const counter = useStore(state => state.counter)
   return (
-    <div>
+    <div className='alert alert-success mt-3'>
       Counter: {counter}
     </div>
   )

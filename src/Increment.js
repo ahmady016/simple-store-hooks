@@ -4,13 +4,12 @@ import { useDispatch } from './Store'
 export default function Increment () {
   const dispatch = useDispatch()
   return (
-    <div>
-      <button
-        type='button'
-        onClick={() => dispatch({ type: 'change', value: 1 })}
-      >
-        Increment
-      </button>
-    </div>
+    <button
+      type='button'
+      className='btn btn-primary'
+      onClick={() => dispatch({ type: 'change', value: 1 })}
+    >
+      Increment
+    </button>
   )
 }
