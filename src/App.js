@@ -1,7 +1,10 @@
 import React from 'react'
-import Increment from './Increment'
-import Counter from './Counter'
-import Decrement from './Decrement'
+import Increment from './counter/Increment'
+import Counter from './counter/Counter'
+import Decrement from './counter/Decrement'
+import AddTodo from './todos/AddTodo'
+import Todos from './todos/Todos'
+import UpdateTodo from './todos/UpdateTodo'
 import './app.css'
 
 function App () {
@@ -12,6 +15,10 @@ function App () {
       <Increment />
       <Counter />
       <Decrement />
+      <hr />
+      <AddTodo />
+      <Todos />
+      <UpdateTodo />
     </div>
   )
 }
