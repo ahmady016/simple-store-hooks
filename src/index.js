@@ -15,17 +15,11 @@ const counterReducer = (state, action) => {
 const todosReducer = (state, { type, payload }) => {
   switch (type) {
     case 'addTodo':
-      return {
-        todos: [...state.todos, payload]
-      }
+      return [...state, payload]
     case 'updateTodo':
-      return {
-        todos: state.todos.map(todo => todo.id === payload.id ? payload : todo)
-      }
+      return state.map(todo => todo.id === payload.id ? payload : todo)
     case 'deleteTodo':
-      return {
-        todos: state.todos.filter(todo => todo.id !== payload.id)
-      }
+      return state.filter(todo => todo.id !== payload.id)
     default:
       return state
   }
