@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from './Store'
+import { useDispatch } from '../Store'
 
 export default function Decrement () {
   const dispatch = useDispatch()
