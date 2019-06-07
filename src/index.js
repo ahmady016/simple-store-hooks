@@ -4,7 +4,6 @@ import { Store } from './Store'
 import App from './App'
 import './index.css'
 
-const initialState = { counter: 0 }
 const reducer = (state, action) => {
   switch (action.type) {
     case 'change':
@@ -15,8 +14,14 @@ const reducer = (state, action) => {
       return state
   }
 }
+const config = {
+  counter: {
+    state: 0,
+    reducer
+  }
+}
 render(
-  <Store initialState={initialState} reducer={reducer}>
+  <Store config={config}>
     <App />
   </Store>,
   document.getElementById('root')
